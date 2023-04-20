@@ -1,0 +1,49 @@
+.algorithmbtn {
+    width: 13%;
+    font-size: 120%;
+}
+
+.inputcontainer {
+    width: 12%;
+    margin-left: 44%;
+}
+
+.box {
+    width: 600px;
+    margin: auto;
+    height: 400px;
+}
+
+.bar {
+    background-color: white;
+    height: 100%;
+    float: left;
+}
+
+.slider {
+    font-size: 200%;
+    width: 20%;
+    margin-left: 40%;
+}
+
+.input {
+    scale: 150%;
+}
+
+.slider {
+    float: left;
+    width: 20%;
+    margin-left: 35%;
+}
+
+.type {
+    float: left;
+    width: 20%;
+    margin-left: 5%;
+    scale: 125%;
+}
+
+#sorting {
+    width: 20%; 
+    margin: auto;
+}
