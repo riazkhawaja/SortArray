@@ -22,28 +22,37 @@
         Select the algorithm to use:
     </div> <br>
     <div class="text-center">
-        <button class="btn btn-success algorithmbtn" id="mergeSort">MergeSort <span class="fw-bold">(n*log(n))</span></button>
-        <button class="btn btn-success algorithmbtn" id="quickSort">QuickSort <span class="fw-bold">(n*log(n))</span></button>
-        <button class="btn btn-primary algorithmbtn" id="bubbleSort">BubbleSort <span class="fw-bold">(n*log(n))</span></button>
-        <button class="btn btn-primary algorithmbtn" id="insertionSort">InsertionSort <span class="fw-bold">(n*log(n))</span></button>
-        <button class="btn btn-danger algorithmbtn" id="bogoSort">BogoSort <span class="fw-bold">((∞💀))</span></button>
+        <button class="btn btn-success algorithmbtn" id="mergeSort">MergeSort <span class="fw-bold">(n*log(n))</span>
+        </button>
+        <button class="btn btn-success algorithmbtn" id="quickSort">QuickSort <span
+                class="fw-bold">(n*log(n))</span></button>
+        <button class="btn btn-primary algorithmbtn" id="bubbleSort">BubbleSort <span
+                class="fw-bold">(n^2)</span></button>
+        <button class="btn btn-primary algorithmbtn" id="insertionSort">InsertionSort <span
+                class="fw-bold">(n^2)</span></button>
+        <button class="btn btn-danger algorithmbtn" id="bogoSort">BogoSort <span class="fw-bold">(∞💀)</span></button>
     </div> <br>
     <div>
-            <div class="slider fw-normal slider">
-                <span class="display-6 fw-normal">Delay in ms [0 - 1000]</span>
-                <input class="form-range" value="150" type="range" id="delay" min="0" max="1000">
-            </div>
-            <div class="form-check form-check-inline type">
-                <input class="form-check-input sortType" name="inlineRadioOptions" checked type="radio" id="ascending">
-                <label class="form-check-label" for="inlineRadio2">Ascending</label>
-            </div> <br><br>
-            <div class="form-check form-check-inline type">
-                <input class="form-check-input sortType" type="radio" name="inlineRadioOptions" id="descending">
-                <label class="form-check-label" for="inlineRadio2">Descending</label>
-            </div>
-        <div class="display-3 fw-normal text-center" id="sorting"></div>
+        <div class="slider fw-normal slider">
+            <span class="display-6 fw-normal">Delay in ms [0 - 1000]</span>
+            <input class="form-range" value="150" type="range" id="delay" min="0" max="1000">
+        </div>
+        <div class="form-check form-check-inline type">
+            <input class="form-check-input sortType" name="inlineRadioOptions" checked type="radio" id="ascending">
+            <label class="form-check-label" for="inlineRadio2">Ascending</label>
+        </div> <br><br>
+        <div class="form-check form-check-inline type">
+            <input class="form-check-input sortType" type="radio" name="inlineRadioOptions" id="descending">
+            <label class="form-check-label" for="inlineRadio2">Descending</label>
+        </div>
+        <div class="form-check form-check-inline stop">
+            <button class="btn btn-danger algorithmbtn" id="stop"><span
+                    class="fw-bold">Stop</span></button>
+        </div>
+        <div class="display-5 fw-normal text-center" id="sorting"></div>
     </div> <br>
     <div class="box" id="graph">
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"

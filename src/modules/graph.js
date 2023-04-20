@@ -13,14 +13,14 @@ const generate = size => {
 const update = async (array, size) => {
     return new Promise(resolve => {
         var graph = document.getElementById('graph'); graph.innerHTML = ''; 
-        var adjwidth = Math.max(25 * size, 500);
-        var gapwidth = adjwidth * 2 / 5 / size; var barwidth = adjwidth * 3/5 / size;
-        graph.style = `width:${adjwidth + gapwidth}px;border: 3px solid white; padding-left:${gapwidth - 3}px;`
+        var adjwidth = 50;//Math.max(25 * size, 500);
+        var gapwidth = 100 * (adjwidth * 2 / 5 / size)/adjwidth ; var barwidth = 100 * (adjwidth * 3/5 / size) / adjwidth;
+        graph.style = `width:${adjwidth + gapwidth}%; padding-left:${gapwidth/2}%;`
         var maxValue = Math.max(...array);
         for (let i = 0; i < size; i++) {
             var bar = document.createElement("div"); var gap = document.createElement("div");
-            bar.id = `${i}`; bar.style = `width:${barwidth}px;background-color: white;height: ${(array[i] * 400 / maxValue) - 3}px;float: left; margin-top:${400 - (array[i] * 400 / maxValue)}px;`;
-            gap.style = `width:${gapwidth}px;background-color: transparent;height: ${400}px;float: left;`;
+            bar.id = `${i}`; bar.style = `width:${barwidth}%;background-color: white;height: ${(array[i] * 400 / maxValue)}px;float: left; margin-top:${397 - (array[i] * 400 / maxValue)}px;`;
+            gap.style = `width:${gapwidth}%;background-color: transparent;height: ${400}px;float: left;`;
             graph.appendChild(bar); graph.appendChild(gap);
         }
         resolve();
