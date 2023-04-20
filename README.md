@@ -1,1 +1,1 @@
-A program which tests time efficiency of various sorting algorithms on numerical inputs.
+A program which demonstrates various sorting algorithms on numerical inputs.
