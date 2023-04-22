@@ -15,10 +15,10 @@ const sort = async (algorithm, size, ascending) => {
 
     switch (algorithm) {
         case 'bubbleSort':
-            sorted = sortArray.bubbleSort(array, displayGraph, ascending, delay);
+            sorted = await sortArray.bubbleSort(array, displayGraph, ascending, delay, sortArray.iteration);
             break;
         case 'insertionSort':
-            sorted = await sortArray.insertionSort(array, displayGraph, ascending, delay)
+            sorted = await sortArray.insertionSort(array, displayGraph, ascending, delay, sortArray.iteration)
             break;
         case 'mergeSort':
             sorted = await sortArray.mergeSort(array, displayGraph, ascending, delay, sortArray.merge, 0, array.length - 1);

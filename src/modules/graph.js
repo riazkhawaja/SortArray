@@ -12,24 +12,31 @@ const generate = size => {
 }
 const update = async (array, size) => {
     return new Promise(resolve => {
-        var graph = document.getElementById('graph'); graph.innerHTML = ''; 
+        var graph = document.getElementById('graph'); graph.innerHTML = '';
         var adjwidth = 50;//Math.max(25 * size, 500);
-        var gapwidth = 100 * (adjwidth * 2 / 5 / size)/adjwidth ; var barwidth = 100 * (adjwidth * 3/5 / size) / adjwidth;
-        graph.style = `width:${adjwidth + gapwidth}%; padding-left:${gapwidth/2}%;`
+        var gapwidth = 100 * (adjwidth * 2 / 5 / size) / adjwidth; var barwidth = 100 * (adjwidth * 3 / 5 / size) / adjwidth;
+        graph.style = `width:${adjwidth + gapwidth}%; padding-left:${gapwidth / 2}%;`
         var maxValue = Math.max(...array);
         for (let i = 0; i < size; i++) {
             var bar = document.createElement("div"); var gap = document.createElement("div");
-            bar.id = `${i}`; bar.style = `width:${barwidth}%;background-color: white;height: ${(array[i] * 400 / maxValue)}px;float: left; margin-top:${397 - (array[i] * 400 / maxValue)}px;`;
+            bar.id = `${i}`; bar.style = `width:${barwidth}%;background-color: white;height: ${(array[i] * 400 / maxValue) - 6}px;float: left; margin-top:${400 - (array[i] * 400 / maxValue)}px;`;
             gap.style = `width:${gapwidth}%;background-color: transparent;height: ${400}px;float: left;`;
             graph.appendChild(bar); graph.appendChild(gap);
         }
         resolve();
     });
 }
-const swap = (nodeA, nodeB) => {
-    return new Promise(resolve => {
-    [nodeA.style.height, nodeB.style.height] = [nodeB.style.height, nodeA.style.height];
-    [nodeA.style.marginTop, nodeB.style.marginTop] = [nodeB.style.marginTop, nodeA.style.marginTop];
-    resolve();
-    });
+const swap = async (nodeA, nodeB, delay, oneway) => {
+    try {
+        return await new Promise(async (resolve, reject) => {
+            if (!oneway) {
+                [nodeA.style.height, nodeB.style.height] = [nodeB.style.height, nodeA.style.height];
+                [nodeA.style.marginTop, nodeB.style.marginTop] = [nodeB.style.marginTop, nodeA.style.marginTop];
+            } else {
+                [nodeA.style.height] = [nodeB.style.height];
+                [nodeA.style.marginTop] = [nodeB.style.marginTop];
+            }
+            resolve();
+        });
+    } catch (err) { }
 }
